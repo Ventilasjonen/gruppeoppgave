@@ -25,8 +25,7 @@ try:
                     snoverdi = int(komponenter[6])
 
                 
-                if (arstall == arstall_input-1 and maaned > 11) or (arstall == arstall_input and maaned < 5):
-                    print(snoverdi)
+                if (arstall == arstall_input-1 and maaned >= 11) or (arstall == arstall_input and maaned <= 5):
                     if snoverdi >= 20:
                         skifore_dager += 1
 
