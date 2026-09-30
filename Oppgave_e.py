@@ -17,9 +17,6 @@ try:
                 if komponenter[2] != "":
                     arstall = int(komponenter[2][-4:])
                     maaned = int(komponenter[2][3:5])
-                    dag = int(komponenter[2][:2])
-
-                
 
                 if not "-" in komponenter[6] and komponenter[6] != "":
                     snoverdi = int(komponenter[6])
