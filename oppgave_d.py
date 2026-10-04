@@ -10,7 +10,7 @@ nedborer = []
 middeltemper = []
 hoyest_middelvinder = []
 
-year = int(input("Skriv inn en dato på format: dd.mm.åååå: "))
+year = int(input("Skriv inn en et år: "))
 
 with open(FILNAVN, "r", encoding="utf-8") as file:
     reader = csv.reader(file, delimiter=";")
