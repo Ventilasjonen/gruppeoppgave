@@ -18,14 +18,19 @@ with open(FILNAVN, "r", encoding="utf-8") as file:
     for row in reader:
         try:
             dato = datetime.datetime.strptime(row[2], "%d.%m.%Y").date()
+            if dato.year != year:
+                continue
 
-            if (dato.year == year) and (25 >= float(row[3].replace(",", ".")) > 20):
-                sommerdager["sommerdager"] += 1
-            elif (dato.year == year) and (30 >= float(row[3].replace(",", ".")) > 25):
+            temp = float(row[3].replace(",", "."))
+
+            if temp > 30:
+                sommerdager["tropedager"] += 1
+            elif temp > 25:
                 sommerdager["hoysommerdager"] += 1
-            elif (dato.year == year) and (float(row[3].replace(",", ".")) > 30):
-                        sommerdager["tropedager"] += 1
+            elif temp > 20:
+                sommerdager["sommerdager"] += 1
         except (ValueError, IndexError):
-             continue
+            continue
+
 
     print(sommerdager)
