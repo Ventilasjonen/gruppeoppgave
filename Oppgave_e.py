@@ -2,7 +2,7 @@
 #skrive inn et årstall og regn ut for et oppgitt år hvor mange dager det var skiføre den
 #skisesongen. En skisesong strekker seg fra november forrige år til mai dette året.
 
-filnavn = "DAT120/Innlevering/Gruppeprosjekt/gruppeoppgave/sinnes_2014_2025.csv"
+filnavn = "sinnes_2014_2025.csv"
 
 try:
     with open(filnavn, "r", encoding="utf-8") as fil:
