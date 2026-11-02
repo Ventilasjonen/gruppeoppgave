@@ -42,7 +42,7 @@ def skidager_per_sesong(filnavn):
                 antall_ski[sesong] = 0
 
             antall_data[sesong] += 1
-            if snoe > 0:
+            if snoe > 20:
                 antall_ski[sesong] += 1
 
     sesong_liste = []
@@ -62,8 +62,8 @@ for i in range(len(filer)):
     plt.plot(sesonger, skidager, label=navn[i])
 
 plt.title("Antall dager med skiføre per sesong")
-plt.xlabel("Sesong (startår, 2023 = 2023/24)")
-plt.ylabel("Dager med snødybde > 0")
+plt.xlabel("Sesong")
+plt.ylabel("Dager med skiføre")
 plt.grid()
 plt.legend()
 plt.show()
