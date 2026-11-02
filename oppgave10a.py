@@ -17,10 +17,7 @@ maaneder = []
 for i in range(12):
     maaneder.append(i)
 
-maks_middeltemp = 0
-min_middeltemp = 0
-maks_snodybde = 0
-maks_middelvind = 0
+
 
 
 year = int(input("Skriv inn en et år: "))
