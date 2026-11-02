@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 navn = ["Oslo Blindern", "Røros", "Sinnes", "Tromsø", "Værnes", "Venabu"]
 
 filer = [
-    "gruppeoppgave/oslo_blindern_1954_2025_med_makstemperatur.csv",
-    "gruppeoppgave/roeros_1954_2025_med_makstemperatur.csv",
-    "gruppeoppgave/sinnes_2014_2025_med_makstemperatur.csv",
-    "gruppeoppgave/tromsoe_1954_2025_med_makstemperatur.csv",
-    "gruppeoppgave/vaernes_1954_2025_med_makstemperatur.csv",
-    "gruppeoppgave/venabu_1954_2025_med_makstemperatur.csv",
+    "oslo_blindern_1954_2025_med_makstemperatur.csv",
+    "roeros_1954_2025_med_makstemperatur.csv",
+    "sinnes_2014_2025_med_makstemperatur.csv",
+    "tromsoe_1954_2025_med_makstemperatur.csv",
+    "vaernes_1954_2025_med_makstemperatur.csv",
+    "venabu_1954_2025_med_makstemperatur.csv",
 ]
 
 
@@ -30,6 +30,7 @@ def skidager_per_sesong(filnavn):
             except (ValueError, IndexError):
                 continue
 
+            # Mars er i sesongen for forrige år
             if maaned >= 11:
                 sesong = aar
             elif maaned <= 4:
@@ -37,10 +38,12 @@ def skidager_per_sesong(filnavn):
             else:
                 continue
 
+            # hvis den ikke allerede er i data
             if sesong not in antall_data:
                 antall_data[sesong] = 0
                 antall_ski[sesong] = 0
 
+            # data økes uansett
             antall_data[sesong] += 1
             if snoe > 20:
                 antall_ski[sesong] += 1
